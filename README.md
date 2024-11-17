@@ -1,5 +1,9 @@
 Run the npm run dev
 
 
-Description of Project:
+Description of Project: 
 This project is a simple Contact Management App built with React and Redux for state management. It allows users to view, edit, and delete contact details such as name, email, and phone number. The app uses Material UI for styling and components like tables, forms, and buttons. Major technical decisions include using Redux for centralized state management and React's useState for local state in components. Each contact is displayed in a table, where users can edit or delete contacts using corresponding icons. On clicking "Edit", the form appears with the contact details pre-filled, and changes are saved upon submission. The app ensures a clean separation of concerns by using action creators and reducers to manage state updates.
+
+Challenges faced up: During the assignment, one of the key challenges I faced was establishing a smooth connection between the frontend and backend. The frontend was built using React, while the backend was implemented using a Python/FastAPI server. The difficulty arose in properly sending data (like contact details) from the frontend to the backend for creation, update, and deletion, and ensuring that changes were reflected in real-time on the frontend.
+
+To resolve this, I made use of API calls with the fetch API to communicate with the backend endpoints. On successful completion of actions like adding, updating, or deleting contacts, the frontend state was updated accordingly by dispatching actions to Redux, ensuring that the UI reflected the changes without needing a full page reload. Additionally, I handled asynchronous operations and error management to ensure smooth communication between the frontend and backend.
