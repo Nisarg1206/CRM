@@ -2,9 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { Provider } from 'react-redux';
-import store from './store';
+import { configureStore } from '@reduxjs/toolkit';
+import rootReducer from "./reducers";
 
-ReactDOM.render(
+const store = configureStore({
+  reducer:rootReducer
+})
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
   <Provider store={store}>
     <App />
   </Provider>,

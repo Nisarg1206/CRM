@@ -20,26 +20,34 @@ function App() {
   }, []);
 
   const handleAddContact = async (formData) => {
-    try {
+    
+    try
+    {
       const result = await addContact(formData);
       console.log("Contact added successfully:", result);
-    } catch (error) {
+    }
+    catch (error)
+    {
       console.error("Error adding contact:", error);
     }
   };
 
-  const handleDeleteContact = async (contact) => {
+  const handleDeleteContact = async (contact) =>
+  {
     console.log("Contact->", contact);
-    try {
+    try
+    {
       await deleteContact(contact._id);
       setContacts((prev) => prev.filter((c) => c.id !== contact._id));
-      
-    } catch (error) {
+    }
+    catch (error)
+    {
       console.log("Error in deleting contact:", error);
     }
   };
 
-  const handleEditContact = (contact) => {
+  const handleEditContact = (contact) =>
+  {
     setEditContact(contact);
   }
 

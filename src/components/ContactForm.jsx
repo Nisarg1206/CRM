@@ -6,8 +6,13 @@ import Typography from "@mui/material/Typography";
 import CssBaseline from "@mui/material/CssBaseline";
 import Stack from "@mui/material/Stack";
 import { Grid } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { setContacts } from "../slices/contactSlice";
 
 function ContactForm({ onSubmit }) {
+
+  const dispatch = useDispatch();
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -26,9 +31,10 @@ function ContactForm({ onSubmit }) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = (e) =>
+  {
     e.preventDefault();
-    onSubmit(formData);
+    dispatch(setContacts(formData))
     setFormData({
       firstName: "",
       lastName: "",
